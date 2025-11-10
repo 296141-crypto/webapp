@@ -1,0 +1,74 @@
+html, body{
+    height:100%;
+}
+/* 1. Basic Setup */
+body {
+    margin: 0;
+    background-color: #f0f0f0; /* Neutral background for the page */
+}
+
+.wheel-container {
+    position: absolute;
+    top:50%;
+    margin-top:-150px;
+    left:50%;
+    margin-left:-150px;
+}
+
+/* 2. The Spinner/Wheel Container */
+.spinner {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; /* Makes it a circle */
+    position: relative;
+    overflow: hidden; /* Important to clip the wedges */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.wrapper{
+    height:50%;
+    width:100%;
+}
+/* 3. The Color Segments (Wedges) */
+.segment {
+    width: 50%;
+    height: 100%;
+    display:inline-block;
+}
+
+/* 4. Individual Color and Rotation */
+.red {
+    background-color: #ff0000; /* Red */
+    /* No rotation needed for the first segment */
+}
+
+.blue {
+    background-color: #0000ff; /* Blue */
+}
+
+.green {
+    background-color: #008000; /* Green */
+}
+
+.yellow {
+    background-color: #ffff00; /* Yellow */
+}
+
+.black-arrow {
+    width: 0;
+    height: 0;
+    /* The size of the arrow is determined by the border widths */
+    /* The top and bottom borders create the vertical span (300px total) */
+    border-top: 100px solid transparent; /* Half of the desired height */
+    border-bottom: 100px solid transparent; /* Half of the desired height */
+    /* The left border creates the arrow head and determines the color/width of the arrow */
+    border-left: 80px solid black; /* This determines the arrow's length/thickness */
+    position: absolute;
+    top:55%;
+    margin-top:-157px;
+    left:61%;
+    margin-left:-150px;
+    /* 1. Allows rotation without moving the center point */
+    transform-origin: center center; 
+    /* 2. Animates the rotation over 0.5 seconds */
+    transition: transform 0.5s ease-out;
+}
