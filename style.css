@@ -71,4 +71,27 @@ body {
     transform-origin: center center; 
     /* 2. Animates the rotation over 0.5 seconds */
     transition: transform 0.5s ease-out;
+
+/* Base Style for the element */
+#black-arrow{
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s; /* Smooth transition for starting/stopping */
+}
+
+/* 1. Define the Spinning Motion */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 2. The class that applies the animation (Initially NOT on the element) */
+.spinning {
+    animation: spin 1s linear infinite; /* Shorthand for duration, timing, and repetition */
 }
