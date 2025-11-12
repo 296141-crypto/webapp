@@ -53,45 +53,28 @@ body {
     background-color: #ffff00; /* Yellow */
 }
 
+
+
+/* Base Style for the element */
 .black-arrow {
     width: 0;
     height: 0;
-    /* The size of the arrow is determined by the border widths */
-    /* The top and bottom borders create the vertical span (300px total) */
-    border-top: 100px solid transparent; /* Half of the desired height */
-    border-bottom: 100px solid transparent; /* Half of the desired height */
-    /* The left border creates the arrow head and determines the color/width of the arrow */
-    border-left: 80px solid black; /* This determines the arrow's length/thickness */
+    border-top: 100px solid transparent; 
+    border-bottom: 100px solid transparent; 
+    border-left: 80px solid black; 
     position: absolute;
-    top:55%;
-    margin-top:-157px;
-    left:61%;
-    margin-left:-150px;
+    top: 55%;
+    margin-top: -157px;
+    left: 61%;
+    margin-left: -150px;
+    
     /* 1. Allows rotation without moving the center point */
     transform-origin: center center; 
-    /* 2. Animates the rotation over 0.5 seconds */
-    transition: transform 0.5s ease-out;
-
-/* Base Style for the element */
-#black-arrow{
-    width: 100px;
-    height: 100px;
-    background-color: #3498db;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.1s; /* Smooth transition for starting/stopping */
-}
-
-/* 1. Define the Spinning Motion */
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* 2. The class that applies the animation (Initially NOT on the element) */
-.spinning {
-    animation: spin 1s linear infinite; /* Shorthand for duration, timing, and repetition */
+    
+    /* 2. ***INCREASED DURATION FOR SPINNING EFFECT*** */
+    /* This makes the rotation transition take 5 seconds */
+    transition: transform 5s ease-out; 
+    
+    /* 3. Initial state */
+    transform: rotate(0deg); 
 }
